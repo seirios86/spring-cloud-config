@@ -1,17 +1,18 @@
-token:
-  secret: user_token_native_application
-
-gateway:
-  ip: 172.18.0.5
-
 spring:
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:testdb
     username: sa
-    password: 1234
+    password: '{cipher}0a77f319b228c8b3a419a72a64d208057cfabfa6810a91e47e866cea562d99ad'
 
+token:
+  expiration_time: 864000000 
+  secret: '{cipher}abee453d9f5b78eea46f78eba3bd3b94a8c619401e14595b123d45c4ae91fe45'
+
+gateway:
+  ip: 172.18.0.5
+  
 order_service:
-  url: http://ORDER-SERVICE/order-service/%s/orders
+  url:  http://ORDER-SERVICE/order-service/%s/orders
   exception:
     orders_is_empty: There is no item.
