@@ -1,12 +1,15 @@
+token:
+  secret: user_token_native_application
+
+gateway:
+  ip: 172.18.0.5
+
 spring:
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:testdb
     username: sa
     password: 1234
-
-gateway:
-  ip: 192.168.0.21
 
 order_service:
   url: http://ORDER-SERVICE/order-service/%s/orders
